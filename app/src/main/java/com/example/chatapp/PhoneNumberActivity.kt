@@ -12,6 +12,16 @@ class PhoneNumberActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPhoneNumberBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         auth = FirebaseAuth.getInstance()
+        CommonMethods.hideActionBar(supportActionBar)
+        initViews()
+    }
+
+    private fun initViews() {
+        binding.etPhoneNo.requestFocus()
+        binding.btnContinue.setOnClickListener {
+            // Start OTP activity
+        }
     }
 }
